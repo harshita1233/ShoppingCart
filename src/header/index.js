@@ -1,10 +1,18 @@
 import React from 'react'
 import { AppBar, Box, Grid, IconButton, Typography } from '@material-ui/core'
 import { Search, Person, ShoppingCart } from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() => ({
+  appBar: {
+    position: "sticky",
+  },
+}))
 
 const Header = () => {
+  const classes = useStyles()
   return (
-    <Box component={AppBar} position="static" px={8} py={1}>
+    <Box className={classes.appBar} component={AppBar} position="static" px={8} py={1}>
       <Grid container alignItems="center">
         <Grid item xs={6}>
           <Typography variant="h6">
